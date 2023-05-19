@@ -1,10 +1,10 @@
 <template>
   <div class="pane-account">
     <el-form v-model="account" :rules="accountRules" label-width="60" size="large">
-      <el-form-item label="帐号" props="username">
+      <el-form-item label="帐号" prop="username">
         <el-input v-model="account.username" />
       </el-form-item>
-      <el-form-item label="密码" props="password">
+      <el-form-item label="密码" prop="password">
         <el-input v-model="account.password" show-password />
       </el-form-item>
     </el-form>
@@ -13,7 +13,8 @@
 
 <script setup lang="ts">
 import { reactive } from 'vue'
-import type { FormRules } from 'element-plus/lib/components/index.js'
+// @ts-ignore
+import type { FormRules } from 'element-plus'
 
 // 1. 定义account数据
 const account = reactive({
