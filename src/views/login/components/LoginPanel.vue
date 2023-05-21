@@ -14,7 +14,7 @@
               <span class="text">帐号登录</span>
             </div>
           </template>
-          <PaneAccount />
+          <PaneAccount ref="accountRef" />
         </el-tab-pane>
 
         <!-- 2. 手机登录的Pane -->
@@ -49,11 +49,14 @@ import PanePhone from './PanePhone.vue'
 
 const activeName = ref('account')
 const isRemPwd = ref(false)
+const accountRef = ref<InstanceType<typeof PaneAccount>>()
 
 // 点击登录按钮, 验证身份
 const handleLoginBtnClick = () => {
   if (activeName.value === 'account') {
-    console.log('用户在进行账号登录')
+    // 1. 获取子组件的实例
+    accountRef.value?.loginAction()
+    // 2. 调用方法
   } else {
     console.log('用户在进行手机登录')
   }
