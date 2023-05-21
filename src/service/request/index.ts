@@ -63,8 +63,8 @@ class Request {
   post<T = any>(config: MyRequestConfig<T>) {
     return this.request({ ...config, method: 'POST' })
   }
-  put<T = any>(config: MyRequestConfig<T>) {
-    return this.request({ ...config, method: 'PUT' })
+  Patch<T = any>(config: MyRequestConfig<T>) {
+    return this.request({ ...config, method: 'PATCH' })
   }
   delete<T = any>(config: MyRequestConfig<T>) {
     return this.request({ ...config, method: 'DELETE' })
